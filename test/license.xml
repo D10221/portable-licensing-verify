@@ -1,0 +1,13 @@
+<License>
+    <Id>77d4c193-6088-4c64-9663-ed7398ae8c1a</Id>
+    <Type>Trial</Type>
+    <Expiration>Sun, 31 Dec 1899 23:00:00 GMT</Expiration>
+    <Quantity>1</Quantity>
+    <Customer>
+    <Name>John Doe</Name>
+    <Email>john@doe.tld</Email>
+    </Customer>
+    <LicenseAttributes />
+    <ProductFeatures />
+    <Signature>MEUCIQCCEDAldOZHHIKvYZRDdzUP4V51y23d6deeK5jIFy27GQIgDz2CndjBh4Vb8tiC3FGQ6fn3GKt8d/P5+luJH0cWv+I=</Signature>
+</License>

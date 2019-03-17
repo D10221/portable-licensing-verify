@@ -1,0 +1,27 @@
+{
+  "name": "@d10221/portable-licensing-verify",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "jest --ci",
+    "start": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",
+    "debug": "cross-env NODE_ENV=development node -r ts-node/register --inspect-brk src/index.ts",
+    "build": "rimraf lib && tsc -p ."
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "cross-env": "^5.2.0",
+    "jest": "^24.5.0",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ]
+}

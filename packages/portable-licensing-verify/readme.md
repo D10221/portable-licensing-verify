@@ -13,8 +13,3 @@ yarn test
 
 Usage:  
     see tests.
-
-Project Structure:
-
-src/package: packages/portable-licensing-verify
-demo/package-integration/usage/sample test: packages/demo

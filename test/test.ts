@@ -1,5 +1,5 @@
 import verify , { removeSignature, getSignatureValue }from "../src/verify";
-import format, { PUBLIC_OPENING_BOUNDARY, PUBLIC_CLOSING_BOUNDARY } from "../src/format";
+import format, { PUBLIC_KEY_START, PUBLIC_KEY_END } from "../src/format";
 import { XML_WITHOUT_SIGNATURE, SIGNATURE_VALUE, PUBLIC_KEY  } from "./sample-data";
 import { readFileSync } from "fs";
 import { join } from "path";
@@ -19,9 +19,9 @@ describe("Tests", () => {
     it("formats: public", () => {
         var x = format("hello");
         expect(x).toBe(
-            `${PUBLIC_OPENING_BOUNDARY}
+            `${PUBLIC_KEY_START}
 hello
-${PUBLIC_CLOSING_BOUNDARY}
+${PUBLIC_KEY_END}
 `);
     })
     it("formats & 64 char per line", () => {
@@ -32,8 +32,7 @@ ${PUBLIC_CLOSING_BOUNDARY}
             "-----BEGIN PUBLIC KEY-----" + "\n" +
             "0123456789ABCEDF0123456789ABCEDF0123456789ABCEDF0123456789ABCEDF" + "\n" +
             "0123456789ABCEDF0123456789ABCEDF0123456789ABCEDF0123456789ABCEDF" + "\n" +
-            "-----END PUBLIC KEY-----" + "\n"
-            ;
+            "-----END PUBLIC KEY-----" + "\n";
         expect(x).toBe(expected);
     })
     it("validates", () => {

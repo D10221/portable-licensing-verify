@@ -2,6 +2,7 @@
   "name": "@d10221/portable-licensing-verify",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "version": "0.1.0",
   "scripts": {
     "test": "jest --ci",
     "start": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",

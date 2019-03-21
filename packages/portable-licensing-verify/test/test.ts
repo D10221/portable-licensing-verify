@@ -38,4 +38,16 @@ ${PUBLIC_KEY_END}
     it("validates", () => {
         expect(verify(xml, PUBLIC_KEY)).toBe(true);
     });
+
+    const version = electronVersion();
+    if(version){ // don't run in plain node
+        it("works on electron 2.x", ()=>{
+            expect(
+                /2\.\d+\.\d+/.test(version)
+            ).toBeTruthy();
+        })
+    }
 })
+function electronVersion(){
+    return process && process.versions && (process.versions as any).electron;
+}

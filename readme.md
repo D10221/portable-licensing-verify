@@ -12,9 +12,10 @@ Test:
 yarn test
 
 Usage:  
-    see tests|demo.
+    see tests.
 
-Project Structure:
+Notes:
 
-- src/package: packages/portable-licensing-verify
-- demo/package-integration/usage/sample test: packages/demo
+Not working with Electron --version != 2.x
+
+Failing: in latest Electron

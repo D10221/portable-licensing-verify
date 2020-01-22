@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mr D.",
+  "license": "MIT",
+  "private": true,
+  "type": "module"
+}

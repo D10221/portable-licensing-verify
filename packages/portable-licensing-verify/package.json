@@ -2,6 +2,7 @@
   "name": "@d10221/portable-licensing-verify",
   "description": "Portable-Licensing license Verifier",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "version": "0.1.0",
   "scripts": {
@@ -10,7 +11,9 @@
     "test": "yarn test-node  && yarn test-electron",
     "start": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",
     "debug": "cross-env NODE_ENV=development node -r ts-node/register --inspect-brk src/index.ts",
-    "build": "rimraf dist && microbundle",
+    "build:cjs": "node_modules/.bin/microbundle -f cjs -i src/index.ts --external crypto --modern -o dist/index.js",
+    "build:esm": "node_modules/.bin/microbundle -f esm -i src/index.ts --external crypto --modern -o dist/index.esm.js",
+    "build": "rimraf dist && yarn build:cjs && yarn build:esm",
     "electron": "electron"
   },
   "dependencies": {

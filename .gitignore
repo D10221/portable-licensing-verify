@@ -5,3 +5,6 @@
 *.log
 **/lib/*
 *.tgz
+**/*_cache_*/*
+**/dist/*
+**/build/*

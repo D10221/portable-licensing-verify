@@ -16,7 +16,10 @@
     "build:cjs": "node_modules/.bin/microbundle -f cjs -i src/index.ts --external crypto --modern -o dist/index.js",
     "build:esm": "node_modules/.bin/microbundle -f esm -i src/index.ts --external crypto --modern -o dist/index.esm.js",
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",
-    "electron": "electron"
+    "electron": "electron",
+    "releaseit": "npx release-it --no-npm",
+    "prepublish": "yarn test && yarn build && yarn releaseit",
+    "publish": "yarn publish --access public"
   },
   "dependencies": {},
   "devDependencies": {

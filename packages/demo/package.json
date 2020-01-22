@@ -1,6 +1,6 @@
 {
   "name": "@d10221/portable-licensing-verify-demo",
-  "version": "1.0.0",
+  "version": "0.1.0-alpha.1",
   "main": "build/index.js",
   "license": "MIT",
   "scripts": {

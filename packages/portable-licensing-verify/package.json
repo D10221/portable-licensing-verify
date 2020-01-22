@@ -1,7 +1,8 @@
 {
   "name": "@d10221/portable-licensing-verify",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "description": "Portable-Licensing license Verifier",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "version": "0.1.0",
   "scripts": {
     "test-electron": "jest --ci --config=jest.config.electron.main.js",
@@ -9,10 +10,12 @@
     "test": "yarn test-node  && yarn test-electron",
     "start": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",
     "debug": "cross-env NODE_ENV=development node -r ts-node/register --inspect-brk src/index.ts",
-    "build": "rimraf lib && tsc -p .",
+    "build": "rimraf dist && microbundle",
     "electron": "electron"
   },
-  "dependencies": {},
+  "dependencies": {
+    "microbundle": "^0.11.0"
+  },
   "devDependencies": {
     "@jest-runner/electron": "^1.1.1",
     "@types/jest": "^24.0.11",
@@ -24,6 +27,7 @@
   },
   "license": "MIT",
   "files": [
-    "lib"
+    "dist",
+    "src"
   ]
 }

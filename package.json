@@ -4,7 +4,7 @@
   "main": "index.js",
   "private": true,
   "repository": "https://github.com/D10221/portable-licensing-verify",
-  "author": "<danieliozzi@gmail.com>",
+  "author": "<d10221@protonmail.com>",
   "license": "MIT",
   "workspaces":[
     "packages/*"

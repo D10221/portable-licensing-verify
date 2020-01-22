@@ -4,7 +4,9 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
+  "repository": "https://github.com/D10221/portable-licensing-verify",
+  "author": "<d10221@protonmail.com>",
   "scripts": {
     "test-electron": "jest --ci --config=jest.config.electron.main.js",
     "test-node": "jest --ci",
@@ -16,13 +18,12 @@
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",
     "electron": "electron"
   },
-  "dependencies": {
-    "microbundle": "^0.11.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@jest-runner/electron": "^1.1.1",
     "@types/jest": "^24.0.11",
     "cross-env": "^5.2.0",
+    "microbundle": "^0.11.0",
     "jest": "^24.5.0",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",
@@ -32,5 +33,10 @@
   "files": [
     "dist",
     "src"
-  ]
+  ],
+  "engines": {
+    "node": ">=10",
+    "npm": "^5.6.0",
+    "electron": "^2.0.0"
+  }
 }

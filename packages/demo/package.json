@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Not Implemented\"",
+    "prestart": "yarn build",
     "start": "cross-env NODE_ENV=production node .",
     "dev": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",
     "debug": "cross-env NODE_ENV=development node -r ts-node/register --inspect-brk src/index.ts",
     "build": "rimraf build && tsc -p ."
   },
   "dependencies": {
-    "@d10221/portable-licensing-verify": "0.1.0",
+    "@d10221/portable-licensing-verify": "0.1.0-alpha.1",
     "is-electron": "^2.2.0",
     "minimist": "^1.2.0",
     "xml-js": "^1.6.11"

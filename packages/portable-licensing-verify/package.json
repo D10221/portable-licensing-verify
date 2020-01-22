@@ -17,17 +17,18 @@
     "build:esm": "node_modules/.bin/microbundle -f esm -i src/index.ts --external crypto --modern -o dist/index.esm.js",
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",
     "electron": "electron",
-    "releaseit": "npx release-it --no-npm",
-    "prepublish": "yarn test && yarn build && yarn releaseit",
-    "publish": "yarn publish --access public"
+    "releaseit": "yarn test && yarn build && release-it --no-npm",
+    "publishit": "yarn releaseit && npm publish --access public"
   },
   "dependencies": {},
   "devDependencies": {
     "@jest-runner/electron": "^1.1.1",
     "@types/jest": "^24.0.11",
     "cross-env": "^5.2.0",
-    "microbundle": "^0.11.0",
     "jest": "^24.5.0",
+    "microbundle": "^0.11.0",
+    "release-it": "^12.4.3",
+    "rimraf": "^3.0.0",
     "ts-jest": "^24.0.0",
     "ts-node": "^8.0.3",
     "typescript": "^3.3.3333"
@@ -39,7 +40,7 @@
   ],
   "engines": {
     "node": ">=10",
-    "npm": "^5.6.0",
-    "electron": "^2.0.0"
+    "npm": ">=5.6",
+    "electron": ">=2"
   }
 }

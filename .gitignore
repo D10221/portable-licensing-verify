@@ -8,3 +8,5 @@
 **/*_cache_*/*
 **/dist/*
 **/build/*
+results.node.json
+results.electron.json

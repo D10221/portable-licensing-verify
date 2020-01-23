@@ -1,27 +1,35 @@
 import verify, { removeSignature, getSignatureValue } from "../src/verify";
 import format, { PUBLIC_KEY_START, PUBLIC_KEY_END } from "../src/format";
+import isElectron from "is-electron";
 import {
   XML_WITHOUT_SIGNATURE,
   SIGNATURE_VALUE,
   PUBLIC_KEY,
+  SIGNATURE_NODE,
 } from "./sample-data";
+import { versionNo, electronVersion } from "./electron-version";
 
-describe("Tests", () => {
+const electronSupport = [2];
+
+describe("Validate", () => {
   const version = versionNo(electronVersion());
-  it("works on electron 2.x", () => {
-    if (version && version >= 2 && version < 3) {
-      // don't run in plain node
-      expect(verify(XML_WITHOUT_SIGNATURE, PUBLIC_KEY)).toBe(true);
+  it("verify", () => {
+    // works on Node & electron 2.x
+    if (isElectron() && (!version || electronSupport.indexOf(version) === -1)) {
+      throw new Error(`Unexpected Electron version: ${(version || "?")}, Expected [${electronSupport.join(" | ")}]`)
     }
+    // defaults: format: pem, 1
+    // signature-encoding: kSigEncDER, 
+    // data: string,
+    // format: 1, 
+    // type: undefined, 
+    // passphrase: undefined,, 
+    // signature: ArrayBuffer,
+    // rsaPadding: undefined,
+    // pssSaltLength: undefined, 
+    // dsaSigEnc: 0 (kSigEncDER) 
+    expect(verify(XML_WITHOUT_SIGNATURE + SIGNATURE_NODE, PUBLIC_KEY)).toBe(true);
   });
+
+
 });
-
-function electronVersion() {
-  return process && process.versions && (process.versions as any).electron;
-}
-
-function versionNo(version: string) {
-  return (
-    (version && Number((/(\d+)\.\d+.\d+.(?:.*)/.exec(version) || [])[1])) || NaN
-  );
-}

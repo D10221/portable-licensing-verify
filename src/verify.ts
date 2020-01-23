@@ -28,11 +28,12 @@ export function getSignatureValue(xmlData: string): string | undefined {
  * @param {string} publicKey
  * @return {boolean} verified
  */
-export default function verify(xmlData: string, publicKey: string): boolean {
+export default function verify(xmlData: string, publicKey: string): boolean {  
   const verify = crypto.createVerify("RSA-SHA512");
   verify.update(removeSignature(xmlData));
   const signature = getSignatureValue(xmlData);
   if (!signature) throw new Error("No Signature");
-  const ok = verify.verify(format(publicKey), signature, "base64");
+  const x = format(publicKey)
+  const ok = verify.verify(x, signature, "base64");
   return ok;
 }

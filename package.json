@@ -7,12 +7,12 @@
   "version": "0.1.0-alpha.2",
   "repository": "https://github.com/D10221/portable-licensing-verify",
   "author": "<d10221@protonmail.com>",
-  "scripts": {
-    "test-electron": "jest --ci --config=jest.config.electron.main.js",
-    "test-node": "jest --ci",
-    "test": "yarn test-node  && yarn test-electron",
-    "start": "cross-env NODE_ENV=development node -r ts-node/register --inspect src/index.ts",
-    "debug": "cross-env NODE_ENV=development node -r ts-node/register --inspect-brk src/index.ts",
+  "scripts": {    
+    "test:electron": "jest --ci --config=jest.config.electron.main.js",
+    "test:node": "jest --ci",
+    "test": "yarn test:node  && yarn test:electron",
+    "debug:node": "cross-env NODE_ENV=development node --inspect-brk node_modules/jest/bin/jest --ci",
+    "build:debug": "rimraf build && tsc -p tsconfig.debug.json",
     "build:cjs": "node_modules/.bin/microbundle -f cjs -i src/index.ts --external crypto --modern -o dist/index.js",
     "build:esm": "node_modules/.bin/microbundle -f esm -i src/index.ts --external crypto --modern -o dist/index.esm.js",
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",

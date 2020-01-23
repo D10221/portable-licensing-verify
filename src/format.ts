@@ -5,8 +5,14 @@ export const PUBLIC_KEY_END = '-----END PUBLIC KEY-----';
 const wrap = (data: string) => {
     return `${PUBLIC_KEY_START}\n${data}\n${PUBLIC_KEY_END}`;
 }
+const EOL = '\n';
 /** format: PKCS_8 */
-const format = (data: string) => {
+const format = (data: string, nopad: boolean = false) => {
+    if (nopad) return (PUBLIC_KEY_START +
+        EOL +
+        data +
+        EOL +
+        PUBLIC_KEY_END);
     const out: string[] = [];
     let line = "";
     let count = 0;

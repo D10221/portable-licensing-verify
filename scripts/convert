@@ -1,0 +1,2 @@
+#!/usr/bin/env  sh
+openssl pkcs7 -print_certs -in public.pem -out public.pkcs7.pem 

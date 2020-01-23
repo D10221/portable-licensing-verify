@@ -1,0 +1,3 @@
+#!/usr/bin/env  sh
+openssl dgst -sha512 -verify public.pem -signature signature.sign signed.xml
+openssl dgst -sha512 -verify public.nopad.pem -signature signature.sign signed.xml

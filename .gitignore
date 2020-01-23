@@ -10,3 +10,8 @@
 **/build/*
 results.node.json
 results.electron.json
+.tmp/
+*.pem
+*.key
+*.sign
+signed.xml

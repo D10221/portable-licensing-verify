@@ -48,6 +48,6 @@
   "engines": {
     "node": ">=10",
     "npm": ">=5.6",
-    "electron": ">=2"
+    "electron": ">=2.0.0"
   }
 }

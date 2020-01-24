@@ -8,10 +8,13 @@
 **/*_cache_*/*
 **/dist/*
 **/build/*
-results.node.json
-results.electron.json
 .tmp/
+
 *.pem
 *.key
 *.sign
 signed.xml
+
+results.node.json
+results.electron.json
+results.nodersa.txt

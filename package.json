@@ -12,7 +12,6 @@
     "test:node": "jest --ci",
     "test": "yarn test:node  && yarn test:electron",
     "debug:node": "cross-env NODE_ENV=development node --inspect-brk node_modules/jest/bin/jest --ci",
-    "build:debug": "rimraf build && tsc -p tsconfig.debug.json",
     "build:cjs": "node_modules/.bin/microbundle -f cjs -i src/index.ts --external crypto --modern -o dist/index.js",
     "build:esm": "node_modules/.bin/microbundle -f esm -i src/index.ts --external crypto --modern -o dist/index.esm.js",
     "build": "rimraf dist && yarn build:cjs && yarn build:esm",

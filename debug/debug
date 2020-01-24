@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+node --inspect-brk -r ts-node/register debug/main.ts

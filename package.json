@@ -36,7 +36,7 @@
     "typescript": "3.7.5",
     "electron": "7.1.9",
     "is-electron": "2.2.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.5",
     "xml-js": "1.6.11",
     "@types/minimist": "1.2.0"
   },

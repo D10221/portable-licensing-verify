@@ -34,7 +34,7 @@
     "ts-jest": "24.3.0",
     "ts-node": "8.6.2",
     "typescript": "3.7.5",
-    "electron": "7.1.9",
+    "electron": "9.1.0",
     "is-electron": "2.2.0",
     "minimist": "1.2.5",
     "xml-js": "1.6.11",
